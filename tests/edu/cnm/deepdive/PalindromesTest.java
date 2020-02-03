@@ -9,22 +9,15 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 class PalindromesTest {
 
-  static final String[] negativeTestData = {
-      "xy",
-      "sonar",
-      "Madame, I'm Adam",
-      "Burrito Dog"
-  };
-
   @ParameterizedTest
   @CsvFileSource(resources = "/affirmative.csv")
-  void isPalindromeAffirmative(String testCase) {
+  void isPalindrome_affirmative(String testCase) {
     assertTrue(Palindromes.isPalindrome(testCase));
   }
 
   @ParameterizedTest
   @CsvFileSource(resources = "/negative.csv")
-  void isPalindromeNegative(String testCase) {
+  void isPalindrome_negative(String testCase) {
     assertFalse(Palindromes.isPalindrome(testCase));
   }
 
